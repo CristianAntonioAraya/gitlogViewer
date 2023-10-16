@@ -18,7 +18,22 @@ const getRepositoryData = async () => {
         };
         commits.push(commit);
     });
+    groupByDate(commits);
     return commits;
+};
+
+const groupByDate = (commitsData) => {
+    const commitGroups = {};
+
+    commitsData.forEach((commit) => {
+        const commitDate = commit.commitDate.split('T')[0];
+        if (commitGroups[commitDate]) {
+            commitGroups[commitDate].push(commit);
+        } else {
+            commitGroups[commitDate] = [commit];
+        }
+    });
+    console.log('Ordened commits', commitGroups);
 };
 
 export { getRepositoryData };

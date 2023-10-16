@@ -1,4 +1,5 @@
 import moment from 'moment/moment.js';
+import FooterCard from './FooterCard.jsx';
 
 const CommitCard = ({
     committerName,
@@ -8,7 +9,6 @@ const CommitCard = ({
     committerAvatar,
 }) => {
     const newDate = moment(commitDate).format('MMMM Do');
-    const newDate2 = moment(commitDate).fromNow();
     const shaSliced = sha.slice(0, 7);
 
     return (
@@ -17,17 +17,11 @@ const CommitCard = ({
             <div className="flex justify-between  p-5 rounded-md bg-zinc-900 ">
                 <div>
                     <p className="text-xl">{commitMessage}</p>
-                    <div className="flex items-center">
-                        <img
-                            className="w-8 h-8 rounded-full"
-                            src={committerAvatar}
-                            alt="Committer avatar"
-                        />
-                        <p className="text-xl">{committerName}</p>
-                        <p className="text-lg text-zinc-500 text-end">
-                            {newDate2}
-                        </p>
-                    </div>
+                    <FooterCard
+                        committerAvatar={committerAvatar}
+                        committerName={committerName}
+                        commitDate={commitDate}
+                    />
                 </div>
                 <div>
                     <div className=" bg-zinc-900 p-1 border">
