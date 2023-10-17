@@ -2,7 +2,7 @@ const CopySvg = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={17} height={17} {...props}>
         <g
             fill="none"
-            stroke="#71717a"
+            stroke=""
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
