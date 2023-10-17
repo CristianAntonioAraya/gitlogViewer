@@ -8,6 +8,7 @@ const CommitCard = ({
     sha,
     committerAvatar,
     authorUrl,
+    commitUrl,
 }) => {
     const shaSliced = sha.slice(0, 7);
 
@@ -24,7 +25,10 @@ const CommitCard = ({
                     />
                 </div>
                 <div>
-                    <ActionsButton shaSliced={shaSliced} />
+                    <ActionsButton
+                        shaSliced={shaSliced}
+                        commitUrl={commitUrl}
+                    />
                 </div>
             </div>
         </div>

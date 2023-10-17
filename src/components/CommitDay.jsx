@@ -17,6 +17,7 @@ const CommitDay = ({ date, commits }) => {
                         sha={item.sha}
                         committerAvatar={item.committerAvatar}
                         authorUrl={item.authorUrl}
+                        commitUrl={item.commitUrl}
                     />
                 ))}
             </div>

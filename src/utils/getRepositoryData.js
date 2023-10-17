@@ -20,6 +20,7 @@ const getRepositoryData = async () => {
 
     // The json obtained is refactored to make it easier to manipulate
 
+    //github.com/CristianAntonioAraya/gitlogViewer/commit/28873e2
     data.map((item) => {
         const commit = {
             sha: item.sha,
@@ -30,7 +31,7 @@ const getRepositoryData = async () => {
             committerAvatar: item.committer?.avatar_url,
             commitMessage: item.commit?.message,
             commitTree: item.commit?.tree,
-            commitUrl: item.commit?.url,
+            commitUrl: `https://github.com/${user}/${repoName}/commit/${item.sha}`,
             commitFormatDate: moment(item.commit?.committer?.date).format(
                 'MMMM Do'
             ),
