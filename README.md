@@ -42,8 +42,16 @@ npm install
 5. Start the development server:
 
 ```bash
-npm install
+npm run dev
 ```
+
+6. Access the application in your browser at http://localhost:5173.
+
+## Usage
+
+1. Open the application in your web browser.
+2. The commits will be displayed in a list with author names, commit messages, and commit dates.
+3. To get the latest commits, you can manually refresh the page.
 
 ## Contributing
 
