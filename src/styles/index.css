@@ -10,6 +10,7 @@ html {
 }
 
 * {
+    color: #e4e4e7;
     padding: 0;
     margin: 0;
     box-sizing: border-box;

@@ -1,29 +1,24 @@
 import { useEffect, useState } from 'react';
-import { getRepositoryData } from '../utils/getRepositoryData.js';
-import CommitCard from '../components/CommitCard.jsx';
+import { getRepositoryData, repoName } from '../utils/getRepositoryData.js';
+import CommitDay from '../components/CommitDay.jsx';
 
 const HomePage = () => {
-    const [data, setdata] = useState();
+    const [commitData, setCommitData] = useState({});
 
     useEffect(() => {
-        getRepositoryData().then((data) => setdata(data));
+        getRepositoryData().then((commitData) => setCommitData(commitData));
     }, []);
-    console.log(data);
+
     return (
-        <div className="w-100 h-screen flex flex-col items-center overflow-x-hidden">
+        <div className=" w-100 h-screen flex flex-col items-center overflow-x-hidden">
             <div className="w-[40rem]">
-                <h1 className="text-5xl my-10 text-center text-gray-200">
-                    GitLogViewer
-                </h1>
+                <h1 className="text-5xl my-10 text-center ">{repoName}</h1>
                 <div>
-                    {data?.map((item) => (
-                        <CommitCard
-                            committerAvatar={item.committerAvatar}
-                            commitMessage={item.commitMessage}
-                            key={item.sha}
-                            sha={item.sha}
-                            committerName={item.committerName}
-                            commitDate={item.commitDate || ''}
+                    {Object.keys(commitData).map((date) => (
+                        <CommitDay
+                            key={date}
+                            date={date}
+                            commits={commitData[date]}
                         />
                     ))}
                 </div>
