@@ -9,9 +9,9 @@ const FooterCard = ({
     const newDate2 = moment(commitDate).fromNow();
 
     return (
-        <div className="my-2 flex items-center gap-4">
+        <div className="my-2 flex flex-col md:flex-row items-start md:items-center md:gap-4">
             <a
-                className="flex items-center gap-2 cursor-pointer"
+                className="flex md:items-center md:gap-2 cursor-pointer"
                 href={authorUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -21,9 +21,9 @@ const FooterCard = ({
                     src={committerAvatar}
                     alt="Committer avatar"
                 />
-                <p className="text-lg">{committerName}</p>
+                <p className="text-sm">{committerName}</p>
             </a>
-            <p className="text-lg text-zinc-500 text-end">
+            <p className="text-sm text-zinc-500 text-end">
                 Committed {newDate2}
             </p>
         </div>

@@ -10,8 +10,8 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className=" w-100 h-screen flex flex-col items-center overflow-x-hidden">
-            <div className="w-[40rem]">
+        <div className="w-100 h-screen flex flex-col items-center overflow-x-hidden">
+            <div className="md:w-[45rem]">
                 <h1 className="text-5xl my-10 text-center ">{repoName}</h1>
                 <div>
                     {Object.keys(commitData).map((date) => (

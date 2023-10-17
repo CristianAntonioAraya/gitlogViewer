@@ -3,8 +3,8 @@ import CommitCard from './CommitCard.jsx';
 const CommitDay = ({ date, commits }) => {
     return (
         <div className="text-white">
-            <div className="flex items-center gap-5">
-                <h1 className="w-32">{date}</h1>
+            <div className="w-98 flex items-center gap-5">
+                <span className="whitespace-nowrap w-fit">Commits on {date}</span>
                 <div className="h-[1px] w-full bg-zinc-500" />
             </div>
             <div>
